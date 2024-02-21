@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pridictor</title>
+    <link rel="stylesheet" href="static/style.css">
+<body>
+    <div class="wrapper">
+        <div class="title">
+            car price predictor
+        </div>
+
+        <form caction="/" class="form" method="POST">
+            <div class="inputfield">
+                <label for=" Engine size">Engine Size</label>
+                <input type="text" class="input" name="Engine_Size" required>
+            </div>
+
+            <div class="inputfield">
+                <label for=" Bore">Bore</label>
+                <input type="text" class="input" name="Bore" required> 
+            </div>
+
+            <div class="inputfield">
+                <label for=" Stroke">Stroke</label>
+                <input type="text" class="input" name="Stroke" required> 
+            </div>
+
+            <div class="inputfield">
+                <label for=" Horse power">Horse Power</label>
+                <input type="text" class="input" name="Horse_Power" required> 
+            </div>
+
+            <div class="inputfield">
+                <label for=" Top rpm">Top-RPM</label>
+                <input type="text" class="input" name="Top_Rpm" required> 
+            </div>
+
+            <div class="inputfield">
+                <label for="Brand_name">Brand Name</label>
+                <div class="custom_select">
+                    <select name="Brand_Name" id="Brand_Name">
+                        <option value="".selected hidden>Select</option>
+                        <option value="Brand Name_honda'">honda</option>
+                        <option value="Brand Name_mazda">mazda</option>
+                        <option value="Brand Name_mitsubishi">mitsubishi</option>
+                        <option value="Brand Name_nissan">nissan</option>
+                        <option value="Brand Name_peugot">peugot</option>
+                        <option value="Brand Name_subaru">subaru</option>
+                        <option value="Brand Name_toyota">toyota</option>
+                        <option value="Brand Name_volkswagen">volkswagen</option>
+                        <option value="Brand Name_volvo">volvo</option>
+                        <option value="Brand Name_Other">Other</option>   
+                    </select>
+                </div>
+            </div>
+
+            <div class="inputfield">
+                <label for="Design">Design</label>
+                <div class="custom_select">
+                    <select name="Design" id="Design">
+                        <option value="".selected hidden>Select</option>
+                        <option value="Design_hatchback">hatchback</option>
+                        <option value="Design_sedan'">sedan</option>
+                        <option value="Design_wagon">wagon</option>
+                        <option value="Design_Other">Other</option>
+                          
+                    </select>
+                </div>
+            </div>
+
+            <div class="inputfield">
+                <label for="Wheel_Drive">Wheel Drive</label>
+                <div class="custom_select">
+                    <select name="Wheel_Drive" id="Wheel_Drive">
+                        <option value="".selected hidden>Select</option>
+                        <option value="Wheel Drive_4wd">4wd</option>
+                        <option value="Wheel Drive_fwd'">fwd</option>
+                        <option value="Wheel Drive_rwd">rwd</option> 
+                    </select>
+                </div>
+            </div>
+
+            <div class="check">
+
+                <label for="Fuel_type">Fuel type</label>
+                <div>
+                    <label  for="Fuel_type_diesel" >diesel</label>
+                    <input type="checkbox" name="Fuel_type_diesel">
+                </div>
+                <div>
+                    <label  for="Fuel_type_gas" >gas</label>
+                    <input type="checkbox" name="Fuel_type_gas">
+                </div>
+            </div>
+
+            <div class="check">
+                <label for="Aspiration">Aspiration</label>
+                <div>
+                    <label for="Aspiration_std">Aspiration_std</label>
+                    <input type="checkbox" name="Aspiration_std">
+                </div>
+                <div>
+                    <label for="Aspiration_turbo" ">Aspiration_turbo</label>
+                    <input type="checkbox" name="Aspiration_turbo">
+                </div>
+            </div>
+
+
+            <div class="check">
+                <label for="Engine_Type">Engine Type</label>
+                <div>
+                    <label for="Engine Type_ohc">Engine Type_ohc</label>
+                    <input type="checkbox" name="Engine_Type_ohc">
+                </div>
+                <div>
+                    <label for="Engine_Type_Other">Engine Type_Other</label>
+                    <input type="checkbox" name="Engine_Type_Other">
+                </div>
+            </div>
+
+            <div class="check">
+                <label for="Engine_Location">Engine Location</label>
+                <div>
+                    <label for="Engine_Location_front">Engine Location_front</label>
+                    <input type="checkbox" name="Engine_Location_front">
+                </div>
+                <div>
+                    <label for="Engine_Location_rear">Engine Location_rear</label>
+                    <input type="checkbox" name="Engine_Location_rear">
+                </div>
+            </div>
+            <div class="inputfield">
+                <input type="submit" value="Predict_price" class="btn">
+            </div>
+        </form>
+
+        <div class="result">
+            {% if pred_value != 0 %}
+            <p>Estimated Price : LKR {{pred_value}}</p>
+            {% endif %}
+        </div>
+    </div>
+       
+</body>
+</html>
